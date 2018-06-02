@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oblačić - naslovna</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="logo l1">
+            <img src="img/2-cloud-png-image-thumb.png" alt="logo">
+        </div>
+        <div class="logo l2">
+            <img src="img/2-cloud-png-image-thumb.png" alt="logo">
+        </div>
+        <div class="logo l3">
+            <img src="img/2-cloud-png-image-thumb.png" alt="logo">
+        </div>
+        <div class="logo l4">
+            <img src="img/2-cloud-png-image-thumb.png" alt="logo">
+        </div>
+
+        <div class="container">
+            <header>
+                <h1>Zadruga Oblačić</h1>
+                <nav>
+                    <ul class="glavnaNav">
+                        <li class="glavnaLi">
+                            <h4 class="link" id="home">Naslovna</h4>
+                        </li>
+                        <li class="glavnaLi">
+                            <h4 class="link" id="posao">Posao</h4>
+                            <div class="sub" id="subPosao">
+                                <ul class="subNav">
+                                    <li>
+                                        <a href="#" class="test link" data-color="rgba(204, 136, 238, 0.8)" id="jsDev">JS developer</a>
+                                    </li>
+                                    <li>
+                                        <a href="pages/phpdev.html" class="test link" data-color="rgba(255, 153, 153, 0.8)" id="phpDev">PHP developer</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="test link" data-color="rgba(255, 255, 153, 0.8)" id="menadzerPosao">Menadžer</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="glavnaLi" id="saradnici">
+                            <h4 class="link">Saradnici</h4>
+                            <div class="sub" id="subSar">
+                                <ul class="subNav">
+                                    <li>
+                                        <a href="#" class="test link" data-color="rgba(255, 255, 153, 0.8)" id="sar1">Saradnik 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="test link" data-color="rgba(204, 136, 238, 0.8)" id="sar2">Saradnik 2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="test link" data-color="rgba(255, 153, 153, 0.8)" id="sar3">Saradnik 3</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="glavnaLi">
+                            <h4 class="link" id="contact">Kontakt</h4>
+                            <div class="sub" id="subKontakt">
+                                <ul class="subNav">
+                                    <li>
+                                        <a href="#" class="test link" data-color="rgba(255, 153, 153, 0.8)" id="menadzerKontakt">Menadžer</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="test link" data-color="rgba(255, 255, 153, 0.8)" id="timLider">Team lider</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="main">
+                <img class="mainImg" src="img/10-cloud-png-image-thumb.png" alt="Programming languages">
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+        // ovako ne radi donji kod, ostaje display:none,
+        //  jer izgleda da je ovo jace nego dodavanje klase .active koja je display:block;
+                // document.querySelectorAll('.sub').forEach((item) => {
+                //     item.style.display = 'none';
+                // });
+
+           
+            document.querySelector('#home').onclick = () => {
+                document.querySelector('#subPosao').classList.remove('active');
+                console.log(document.querySelector('#subPosao'));
+                document.querySelector('#subSar').classList.remove('active');
+                document.querySelector('#subKontakt').classList.remove('active');
+
+                document.querySelector('title').innerHTML = 'Oblačić - naslovna';
+            }
+
+            document.querySelector('#posao').onclick = () => {
+                document.querySelector('#subPosao').classList.add('active');
+                console.log(subPosao);
+                document.querySelector('#subSar').classList.remove('active');
+                document.querySelector('#subKontakt').classList.remove('active');
+                
+                document.querySelector('title').innerHTML = 'Oblačić - posao';
+            }
+
+            document.querySelector('#saradnici').onclick = () => {
+                document.querySelector('#subSar').classList.add('active');
+                console.log(subSar);
+                document.querySelector('#subKontakt').classList.remove('active');
+                document.querySelector('#subPosao').classList.remove('active');
+
+                document.querySelector('title').innerHTML = 'Oblačić - saradnici';
+            }
+
+            document.querySelector('#contact').onclick = () => {
+                document.querySelector('#subKontakt').classList.add('active');
+                console.log(subKontakt);
+                document.querySelector('#subSar').classList.remove('active');
+                document.querySelector('#subPosao').classList.remove('active');
+
+                document.querySelector('title').innerHTML = 'Oblačić - kontakt';
+            }
+
+        //  KRACE, elegantnije resenje
+            document.querySelectorAll('.test').forEach((item) => {
+                // onmouseover, varijante
+                // izgleda da this ne radi bez viticastih zagrada - ???
+                
+                item.onmouseover = () => item.style.backgroundColor = item.dataset.color; // RADI
+
+                // item.onmouseover = () => this.style.backgroundColor = this.dataset.color;  // NE RADI, zasto?
+                // item.onmouseover = () => item.style.backgroundColor = this.dataset.color; // NE RADI 
+                
+                // item.onmouseover = function () {
+                //     this.style.backgroundColor = this.dataset.color;    // RADI
+                // }
+
+                // item.onmouseover = function () {
+                //     item.style.backgroundColor = item.dataset.color;   // RADI
+                // }
+
+
+
+                // onmouseout, varijante
+                item.onmouseout = () => item.style.backgroundColor = 'initial';  // RADI
+
+                // item.onmouseout = () => this.style.backgroundColor = 'initial';   // NE RADI
+
+                // item.onmouseout = function () {
+                //     item.style.backgroundColor = 'initial';  // RADI
+                // }
+
+                // item.onmouseout = function () {
+                //     this.style.backgroundColor = 'initial';   // RADI
+                // }
+
+            });
+
+
+
+        // ..............PESKE.................
+            // var jsDev = document.querySelector('#jsDev');
+            // var phpDev = document.querySelector('#phpDev');
+            // var menadzPosao = document.querySelector('#menadzerPosao');
+
+            // jsDev.onmouseover = () => {
+            //     jsDev.style.backgroundColor = 'rgba(204, 136, 238, 0.8)';
+            // }
+            // jsDev.onmouseout = () => {
+            //     jsDev.style.backgroundColor = 'initial';
+            // }
+
+            // phpDev.onmouseover = () => {
+            //     phpDev.style.backgroundColor = 'rgba(255, 153, 153, 0.8)';
+            // }
+            // phpDev.onmouseout = () => {
+            //     phpDev.style.backgroundColor = 'initial';
+            // }
+
+            // menadzPosao.onmouseover = () => {
+            //     menadzPosao.style.backgroundColor = 'rgba(255, 255, 153, 0.8)';
+            // }
+            // menadzPosao.onmouseout = () => {
+            //     menadzPosao.style.backgroundColor = 'initial';
+            // }
+        });
+
+    </script>
+
+</body>
+
+</html>

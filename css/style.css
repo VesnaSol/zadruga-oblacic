@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Times New Roman', serif;
+    text-shadow: 1px 3px 4px rgb(163, 163, 163);
+}
+
+.wrapper {
+    background: linear-gradient(to right, rgb(0, 33, 195), rgb(255, 255, 255), rgb(0, 33, 195));
+    min-height: 100vh;
+}
+
+.logo {
+    position: fixed;
+}
+
+.l1 {
+    top: 0;
+    left: 0;
+}
+
+.l2 {
+    top: 0;
+    right: 0;
+}
+
+.l3 {
+    bottom: 0;
+    left: 0;
+}
+
+.l4 {
+    bottom: 0;
+    right: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+h1 {
+    color: rgb(0, 33, 195);
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.glavnaNav {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.glavnaLi {
+    flex: 1;
+    list-style: none;
+}
+
+.glavnaLi>.link {
+    background-color: rgb(0, 33, 195); 
+    box-shadow: 1px 3px 4px rgb(139, 139, 139);
+    border-right: 1px inset rgb(43, 64, 172);
+}
+
+.glavnaLi>.link:last-child {
+    border-right: none;
+}
+
+.link {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 12px;
+    text-align: center;
+    padding: 5px;
+    display: block;
+    text-shadow: 1px 2px 3px rgb(163, 163, 163);
+}
+
+.link:hover {
+    cursor: pointer;
+}
+
+.sub {
+    position: relative;
+    display: none;
+}
+
+.subNav {
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.subNav>li {
+    background-color: rgba(0, 33, 195, 0.8);
+    border-bottom: 1px solid rgb(245, 247, 49);
+    box-shadow: 1px 3px 4px rgb(139, 139, 139);
+    list-style: none;
+}
+
+.active {
+    display: block;
+}
+
+/*///// main //// */
+.main {
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 10px;
+}
+
+.mainImg {
+    width: 100%;
+}
+
+h2 {
+    text-align: center;
+    color: rgb(38, 173, 221);
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+
+.main2 {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.mainImg1, .mainImg2, .mainImg3 {
+    flex: 1;
+    width: 25%;
+    margin: 5px;
+}
